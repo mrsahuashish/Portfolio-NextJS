@@ -4,6 +4,7 @@ import {
   RiYoutubeFill,
   RiLinkedinFill,
   RiGithubFill,
+  RiWhatsappFill,
   RiFacebookFill,
   RiInstagramFill,
   RiStackOverflowFill
@@ -12,6 +13,10 @@ import {
 import Link from 'next/link';
 
 const icons = [
+  {
+    path: 'https://api.whatsapp.com/send/?phone=7016292802&text=Hello%2C+I+saw+your+portfolio+and+would+like+to+discuss+potential+projects.&type=phone_number&app_absent=0',
+    name: <RiWhatsappFill />
+  },
   {
     path: 'https://stackoverflow.com/users/23340623/mrsahuashish',
     name: <RiStackOverflowFill />
@@ -39,7 +44,7 @@ const Socials = ({ containerStyles, iconsStyles }) => {
     <div className={`${containerStyles}`}>
       {icons.map((icon, index) => {
         return (
-          <Link href={icon.path} key={index}>
+          <Link href={icon.path} key={index} target='_blank'>
             <div className={`${iconsStyles}`}>{icon.name}</div>
           </Link>
         )
